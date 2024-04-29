@@ -68,7 +68,25 @@ axios
 
       console.log(itemNew);
 
-      container.innerHTML = itemNew;
+      if(itemNew != "")
+      {
+        container.innerHTML = itemNew;       
+      }
+      else{
+        const listClear = `<li class="item-order">
+        <div class="main-container">
+            <div class="title-container">
+                <div class="title-grup">
+                    <h3 class="title-order text-order" >У вас немаэ замовлень!</h3>
+                </div>            
+            </div>         
+        </div>
+        </li>`;
+        container.innerHTML = listClear;
+      }
+      
+
+      
     } catch (err) {
       console.log(err);
     }

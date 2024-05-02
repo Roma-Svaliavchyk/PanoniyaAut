@@ -34,6 +34,8 @@ function handleSubmit(event) {
 
 
     }catch(err){
+      
+      console.log("error 1")
       console.log(err);
     }
   })
@@ -46,20 +48,12 @@ function handleSubmit(event) {
     containerError.classList.remove('list-error-tue');    
     containerError.classList.remove('hiden');
 
-    let errorMessages = '';
-    if (error.response && error.response.data && Array.isArray(error.response.data)) {
-        error.response.data.forEach((errorItem) => {
-            errorMessages += `<li class="error-message">${errorItem.msg}</li>`;
-        });
-    }
-    containerError.innerHTML = errorMessages;
+    console.log("error.response.data.message")
+    console.log(error.response.data.message)
+
+    containerError.innerHTML = `<li class="error-message">${error.response.data.message}</li>`;;
   });
 
-  /*
-  document.getElementById('login').value = '';
-  document.getElementById('pasvord').value = '';
-  document.getElementById('email').value = '';
-  document.getElementById('tel').value = '';*/
 }
 
 
